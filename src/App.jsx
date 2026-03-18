@@ -1,4 +1,5 @@
 import Menu from './pages/menu.jsx';
+import GameScreen from './pages/GameScreen.jsx.jsx';
 import useGameStor from './store/GameStore.jsx';
 
 
@@ -7,7 +8,8 @@ function App() {
 
   return(
     <div className='app'>
-      {screen == 'MENU' && <Menu />}
+      {screen === 'MENU' && <Menu />}
+      {screen === 'Game' && <GameScreen />}
     </div>
   )
 }
