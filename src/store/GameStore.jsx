@@ -1,12 +1,13 @@
+import { use } from 'react';
 import {create} from 'zustand';
 
-const useGameStore = create((set) => ({
-    screen: 'MENUE', // ;GAME, 'GAMEOVER'
-    maxEnemise: 10,
+export const useGameStore = create((set) => ({
+    screen: 'Menu', // ;Game, 'GAMEOVER'
+    maxEnemies: 10,
     stage: 1,
-    enemiseAlive: 0,
+    enemiesAlive: 0,
 
     setScreen: (newScreen) => set({screen: newScreen}),
-    setMaxEnemise: (val) => set({maxEnemise: val}),
-    startGame: () => set({screen: 'GAME', stage: 1, enemiesAlive: 0})
-}))
+    setMaxEnemies: (val) => set({maxEnemies: val}),
+    startGame: () => set({screen: 'Game', stage: 1, enemiesAlive: 0})
+}));

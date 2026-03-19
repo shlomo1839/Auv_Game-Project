@@ -1,13 +1,13 @@
-import useGameStore from '../store/GameStore/jsx';
+import  {useGameStore } from '../store/GameStore';
 
-function GameScreen() {
-    const { stage, enemiesAlive,  maxEnemies} =useGameStore();
+export const GameScreen = () => {
+    const { stage, enemiesAlive,  maxEnemies} = useGameStore();
 
     return (
         <div className='game-container'>
             <div className='hud'>
                 <span>Stage: {stage}</span>
-                <span>Alive: {enemiesAlive}</span>
+                <span>Alive: {enemiesAlive} / {maxEnemies}</span>
             </div>
             <div className='game-area'>
                 <p>map area: next</p>

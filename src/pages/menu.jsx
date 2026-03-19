@@ -1,6 +1,6 @@
-import useGameStore from '../store/GameStore.jsx';
+import { useGameStore } from '../store/GameStore.jsx';
 
-function Menu() {
+export const Menu = ()=> {
     const {maxEnemies, setMaxEnemies, startGame} = useGameStore();
 
     return(
@@ -17,4 +17,5 @@ function Menu() {
             <button onClick={startGame}>Start Game</button>
         </div>
     )
-}
+};
+
