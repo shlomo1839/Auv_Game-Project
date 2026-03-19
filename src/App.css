@@ -1,45 +1,72 @@
-.Menu{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100hv;
-  background-color: #1a1a1a;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
+
+.Menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #0a0a0a;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
 }
+
 
 .Menu h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+    font-size: 4.5rem;
+    color: #00ff00;
+    text-shadow: 0 0 20px rgba(0, 255, 0, 0.6);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
-.Menu label{
-  margin-bottom: 20px;
-  font-size: 1.2rem;
+
+.Menu label {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
+
 
 .Menu input {
-  margin-left: 10px;
-  padding: 5px;
-  width: 60px;
-  border-radius: 4px;
-  border: none;
+    background: transparent;
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    font-family: inherit;
+    font-size: 1.2rem;
+    padding: 5px;
+    width: 60px;
+    text-align: center;
+    outline: none;
+    transition: box-shadow 0.3s;
 }
 
-.Menu botton {
-  padding: 10px 30px;
-  font-size: 1.5rem;
-  background-color: #2ecc71;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
+.Menu input:focus {
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+
+.Menu button {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    font-family: inherit;
+    cursor: pointer;
+    border: 3px solid #00ff00;
+    background: transparent;
+    color: #00ff00;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s;
+    margin-top: 20px;
 }
 
 .Menu button:hover {
-  background-color: #27ae60;
+    background: #00ff00;
+    color: #000;
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.8);
 }
 
 
@@ -92,3 +119,91 @@
   z-index: 5;
 }
 
+
+.game-over-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #0a0a0a;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+
+.victory-title {
+    font-size: 4rem;
+    color: #ffcc00;
+    text-shadow: 0 0 20px #ffcc00;
+    margin-bottom: 20px;
+}
+
+.loss-title {
+    font-size: 4rem;
+    color: #ff4d4d;
+    text-shadow: 0 0 20px #ff4d4d;
+    margin-bottom: 20px;
+}
+
+
+.stats-box {
+    background: rgba(0, 255, 0, 0.05);
+    border: 2px solid #00ff00;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+    margin-bottom: 40px;
+    min-width: 300px;
+}
+
+.stats-box p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.stats-box strong {
+    font-size: 2rem;
+    color: #fff;
+}
+
+
+.end-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-restart, .btn-home {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-family: inherit;
+    cursor: pointer;
+    border: 2px solid;
+    background: transparent;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.btn-restart {
+    color: #00ff00;
+    border-color: #00ff00;
+}
+
+.btn-restart:hover {
+    background: #00ff00;
+    color: #000;
+    box-shadow: 0 0 20px #00ff00;
+}
+
+.btn-home {
+    color: #fff;
+    border-color: #fff;
+}
+
+.btn-home:hover {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 0 20px #fff;
+}

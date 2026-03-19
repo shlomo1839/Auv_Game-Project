@@ -1,6 +1,7 @@
 import { Menu } from './pages/Menu.jsx';
 import { GameScreen } from './pages/GameScreen.jsx';
 import { useGameStore } from './store/GameStore.jsx';
+import { GameOverScreen } from './Components/GameOverScreen.jsx';
 import './App.css'
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <div className='app'>
       {screen === 'Menu' && <Menu />}
       {screen === 'Game' && <GameScreen />}
+      {screen === 'GameOver' && <GameOverScreen />}
     </div>
   )
 }
