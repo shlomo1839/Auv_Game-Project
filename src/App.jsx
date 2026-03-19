@@ -1,7 +1,7 @@
-import { Menu } from './pages/Menu';
-import { GameScreen } from './pages/GameScreen';
-import { useGameStore } from './store/GameStore';
-import { GameOverScreen } from './Components/GameOverScreen';
+import { useGameStore } from './store/GameStore.jsx';
+import { Menu } from './pages/Menu.jsx';
+import { GameScreen } from './pages/GameScreen.jsx';
+import { GameOverScreen } from './Components/GameOverScreen.jsx';
 import './App.css'
 
 function App() {
