@@ -1,19 +1,30 @@
 import { useState, useEffect } from "react";
+import { useGameStore } from "../store/GameStore";
 
 export const Enemy = () => {
     // position of enemy
+    const [isAlive, setIsAlive] = useState(true);
     const [pos, setPos] = useState({x: 100, y: 100});
-
     const [targets, setTargets] = useState([]);
     const [currentTargetIdx, setCurrentTargetIdx] = useState(0);
 
-    //rando pos in screen 
+    const removeEnemy = useGameStore(state => state.removeEnemy);
+    const addEnemy = useGameStore(state => state.addEnemy);
+
+    //random pos in screen 
     const getRandomPos = () => ({
         x: Math.random() * (window.innerWidth - 100) + 50,
         y: Math.random() * (window.innerHeight - 100) + 50
     });
 
-// 3 points to start
+
+     // empty for one time - later nedd to change to add more
+    useEffect(() => {
+        addEnemy();
+    }, []);
+    
+
+    // 3 points to start
     useEffect(() => {
         setTargets([getRandomPos(), getRandomPos(), getRandomPos()])
     }, []);
@@ -48,9 +59,20 @@ export const Enemy = () => {
 
     }, [targets, currentTargetIdx]);
 
+    const handleKillEnemy = () => {
+        setIsAlive(false);
+        removeEnemy();
+    };
+
+    // must be last -if dont, render on useeffects that comming after tis if not heapened 
+    if (!isAlive){
+        return null;
+    }
+
     return (
         <div 
             className="enemy"
+            onClick={handleKillEnemy}
             style={{
                 left: `${pos.x}px`,
                 top: `${pos.y}px`
