@@ -80,3 +80,15 @@
   letter-spacing: 1px;
 }
 
+.enemy {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #ff4757;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #ff4757;
+  border: 2px solid white;
+  transition: transform 0.1s;
+  z-index: 5;
+}
+
