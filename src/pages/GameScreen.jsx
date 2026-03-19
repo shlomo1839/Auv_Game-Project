@@ -21,7 +21,7 @@ export const GameScreen = () => {
                 // create uniq id for all enemy by date
                 return [...prevList, Date.now()]
             })
-        }, 5000)
+        }, 2500)
         return ()=>clearInterval(spawnInterval)
     }, [maxEnemies])
             
