@@ -1,4 +1,5 @@
 import  {useGameStore } from '../store/GameStore';
+import { Enemy } from '../Components/Enemy';
 
 export const GameScreen = () => {
     const { stage, enemiesAlive,  maxEnemies} = useGameStore();
@@ -10,7 +11,7 @@ export const GameScreen = () => {
                 <span>Alive: {enemiesAlive} / {maxEnemies}</span>
             </div>
             <div className='game-area'>
-                <p>map area: next</p>
+                <Enemy />
             </div>
         </div>
     )
