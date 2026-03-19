@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useGameStore } from "../store/GameStore";
 
-export const Enemy = () => {
+export const Enemy = ({ id, onKill}) => {
     // position of enemy
     const [isAlive, setIsAlive] = useState(true);
     const [pos, setPos] = useState({x: 100, y: 100});
@@ -62,6 +62,7 @@ export const Enemy = () => {
     const handleKillEnemy = () => {
         setIsAlive(false);
         removeEnemy();
+        onKill(id);
     };
 
     // must be last -if dont, render on useeffects that comming after tis if not heapened 

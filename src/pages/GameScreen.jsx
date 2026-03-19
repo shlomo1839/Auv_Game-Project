@@ -5,17 +5,23 @@ import { useState, useEffect } from 'react';
 export const GameScreen = () => {
     const { stage, enemiesAlive,  maxEnemies} = useGameStore();
     const [ enemyList, setEnemyList ] = useState([]);
-    
+
+    const removeEnemyFromList =(idToRemove) => {
+        setEnemyList(prevList => prevList.filter(id => id !== idToRemove))
+    };
+
+
+
     useEffect(() =>{
         const spawnInterval = setInterval(() => {
             setEnemyList(prevList => {
-                if (!prevList || prevList.length >= maxEnemies) {
+                if (prevList.length >= maxEnemies) {
                     return prevList;
                 }
                 // create uniq id for all enemy by date
                 return [...prevList, Date.now()]
             })
-        }, 1000)
+        }, 5000)
         return ()=>clearInterval(spawnInterval)
     }, [maxEnemies])
             
@@ -28,7 +34,7 @@ export const GameScreen = () => {
             </div>
             <div className='game-area'>
                 {enemyList.map(id => (
-                    <Enemy key={id} />
+                    <Enemy key={id} id={id} onKill={removeEnemyFromList}/>
                 ))}
             </div>
         </div>
